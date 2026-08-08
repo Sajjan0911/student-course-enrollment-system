@@ -56,4 +56,7 @@ public class StudentService {
     public long countStudents() {
         return studentRepository.count();
     }
+    public long getStudentCount() {
+        return studentRepository.count();
+    }
 }

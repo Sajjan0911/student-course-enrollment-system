@@ -21,16 +21,25 @@ public class EnrollmentController {
 
         return enrollmentService.enrollStudent(studentId, courseId, enrollmentDate);
     }
+    @GetMapping
+    public List<Enrollment> getAllEnrollments() {
+        return enrollmentService.getAllEnrollments();
+    }
     @GetMapping("/student/{studentId}")
     public List<Enrollment> getEnrollmentsByStudent(@PathVariable Long studentId) {
         return enrollmentService.getEnrollmentsByStudentId(studentId);
     }
+
     @DeleteMapping("/{id}")
     public String removeEnrollment(@PathVariable Long id) {
 
         enrollmentService.removeEnrollment(id);
 
         return "Enrollment removed successfully!";
+    }
+    @GetMapping("/count")
+    public long getEnrollmentCount() {
+        return enrollmentService.getEnrollmentCount();
     }
 
 }

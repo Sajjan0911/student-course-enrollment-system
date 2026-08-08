@@ -46,4 +46,8 @@ public class CourseController {
         courseService.deleteCourse(id);
         return "Course deleted successfully!";
     }
+    @GetMapping("/count")
+    public long getCourseCount() {
+        return courseService.getCourseCount();
+    }
 }

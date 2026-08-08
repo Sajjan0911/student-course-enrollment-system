@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students - Student Enrollment System</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🎓 StudentSys</h2>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="/">
+                    <i class="bi bi-speedometer2"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="/students-page">
+                    <i class="bi bi-people-fill"></i>
+                    Students
+                </a>
+            </li>
+
+            <li>
+                <a href="/courses-page">
+                    <i class="bi bi-book-fill"></i>
+                    Courses
+                </a>
+            </li>
+
+            <li>
+                <a href="/enrollments-page">
+                    <i class="bi bi-journal-check"></i>
+                    Enrollments
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <nav class="topbar">
+
+            <h3>Courses Management</h3>
+
+            <button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#studentModal">
+
+                <i class="bi bi-plus-circle"></i>
+
+                Add Course
+
+            </button>
+
+        </nav>
+
+        <!-- Search -->
+
+        <div class="card shadow p-4 mb-4">
+
+            <input
+                    id="searchInput"
+                    class="form-control"
+                    placeholder="🔍 Search Course by Name">
+
+        </div>
+
+        <!-- Table -->
+
+        <div class="card shadow">
+
+            <div class="card-body">
+
+                <table class="table table-hover">
+
+                    <thead class="table-primary">
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Course Name</th>
+                        <th>Duration</th>
+                        <th>Instructor</th>
+                        <th width="150">Actions</th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody id="courseTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade"
+     id="courseModal"
+     tabindex="-1">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 id="modalTitle">Add Course</h5>
+
+                <button
+                        class="btn-close"
+                        data-bs-dismiss="modal"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <input type="hidden" id="courseId">
+
+                <input
+                        id="courseName"
+                        class="form-control mb-3"
+                        placeholder="Course Name">
+
+                <input
+                        id="duration"
+                        class="form-control mb-3"
+                        placeholder="Duration">
+
+                <input
+                        id="instructor"
+                        class="form-control"
+                        placeholder="Instructor">
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                    Cancel
+
+                </button>
+
+                <button
+                        class="btn btn-success"
+                        id="saveCourse">
+
+                    Save Course
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="/js/courses.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

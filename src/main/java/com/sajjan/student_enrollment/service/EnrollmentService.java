@@ -53,5 +53,9 @@ public class EnrollmentService {
     public void removeEnrollment(Long id) {
         enrollmentRepository.deleteById(id);
     }
+    // Get Total Enrollment Count
+    public long getEnrollmentCount() {
+        return enrollmentRepository.count();
+    }
 
 }

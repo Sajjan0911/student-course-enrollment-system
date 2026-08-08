@@ -51,4 +51,8 @@ public class CourseService {
 
         courseRepository.delete(course);
     }
+    // Get Total Course Count
+    public long getCourseCount() {
+        return courseRepository.count();
+    }
 }
